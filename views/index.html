@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>URL Shortener - WAN Short</title>
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <link href="/public/style.css" rel="stylesheet" type="text/css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        background-color: #35d15c;
+      }
+
+      .navbar-brand {
+        font-size: 1.7rem;
+        font-family: "Dancing Script", cursive;
+        /* font-weight: 900; */
+      }
+
+      .navbar-nav a {
+        font-size: 18px;
+      }
+
+      .jumbotron {
+        height: 350px;
+      }
+
+      .form-group {
+        display: flex;
+      }
+
+      .form-control {
+        font-size: 20px;
+        outline: none;
+      }
+
+      .wrap-short {
+        border: 1px solid black;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        background-color: rgb(28, 26, 32);
+      }
+
+      #features {
+        padding: 70px;
+        padding-bottom: 100px;
+      }
+
+      #shortBtn {
+        background-color: #35d15c;
+      }
+
+      @media (max-width: 768px) {
+        .illustration1 {
+          display: none;
+        }
+
+        .jumbotron {
+          height: 150px;
+        }
+
+        .form-group {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /* flex-direction: column; */
+          width: 100%;
+        }
+
+        .form-control {
+          font-size: 15px;
+          outline: none;
+          width: 200px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">WAN Short</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#short">Short URL</a>
+              <a class="nav-link" href="#features">Features</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="jumbotron jumbotron-fluid mt-5 py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h1 class="display-4">Short links, big results</h1>
+              <p class="lead">
+                A URL shortener built with powerful tools to help you grow and
+                <br />
+                protect your brand.
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <img
+                src="../public/image/undraw_link_shortener_mvf6.svg"
+                alt=""
+                width="400"
+                class="illustration1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg id="short"></svg>
+    </header>
+
+    <section class="wrap-short">
+      <div class="container">
+        <div class="form-group">
+          <input
+            id="url"
+            type="text"
+            name="url"
+            placeholder="Shorten your link"
+            class="form-control"
+          />
+          <button
+            type="submit"
+            class="btn btn-lg ms-3 text-white"
+            id="shortBtn"
+          >
+            Shorten
+          </button>
+        </div>
+
+        <div class="validation mt-2" id="validate"></div>
+
+        <div class="card mt-2">
+          <div class="card-body" id="shortList">
+            <h5 class="card-title">Shortened URL</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="rgb(28, 26, 32)"
+          fill-opacity="1"
+          d="M0,160L80,160C160,160,320,160,480,181.3C640,203,800,245,960,266.7C1120,288,1280,288,1360,288L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg> -->
+
+      <div class="container">
+        <h2 class="text-center">
+          <b>The link shortener that has your brand’s back</b>
+        </h2>
+        <p class="text-muted text-center fs-5">
+          Your brand wasn’t built to be hidden. Help it stand out with branded
+          links that drive more clicks.
+        </p>
+        <div class="row mt-5 row-cols-1 row-cols-md-3 justify-content-center">
+          <div class="col">
+            <div class="card border-0 h-100">
+              <img
+                src="../public/image/Homepage-Branded-Links-Illustration-1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title"><b>Inspire trust</b></h5>
+                <p class="card-text">
+                  With more clicks comes increased brand recognition and
+                  consumer trust in your communications—which in turn inspires
+                  even more engagement with your links. (It’s a wonderful
+                  cycle.)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 h-100">
+              <img
+                src="../public/image/Homepage-Branded-Links-Illustration-2.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title"><b>Boost results</b></h5>
+                <p class="card-text">
+                  On top of better deliverability and click-through, rich
+                  link-level data gives you crucial insight into your link
+                  engagement so your team can make smarter decisions around its
+                  content and communications.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 h-100">
+              <img
+                src="../public/image/Site_Check-you.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title"><b>Gain control</b></h5>
+                <p class="card-text">
+                  Take credit for your content and learn more about how it’s
+                  consumed by enabling auto-branding—a feature that ensures your
+                  brand remains in any link someone shortens pointing to your
+                  website.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const urlInput = document.getElementById("url");
+      const shortButton = document.getElementById("shortBtn");
+
+      if (!localStorage.getItem("shortedUrl")) {
+        localStorage.setItem("shortedUrl", JSON.stringify([]));
+      } else {
+        const shortedUrl = JSON.parse(localStorage.getItem("shortedUrl"));
+        shortedUrl.forEach((url) => {
+          const shortUrl = document.getElementById("shortList");
+          shortUrl.innerHTML += `
+          <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <p class="card-text">${url.original}</p>
+              </div>
+              <div class="d-flex">
+                <p class="card-text">
+                  <a href="${url.shortUrl}" target="_blank" class="short-url nav-link"
+                    >${url.shortUrl}</a
+                  >
+                </p>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      const newUrl = {
+        original: "",
+        shortUrl: "",
+      };
+
+      shortButton.addEventListener("click", async function () {
+        const url = urlInput.value;
+
+        const data = {
+          url: url,
+        };
+
+        await fetch("http://localhost:4000/api/shorturl", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            newUrl.original = data.data.original;
+            newUrl.shortUrl = `${window.location.origin}/${data.data.short}`;
+
+            const shortedUrl = JSON.parse(localStorage.getItem("shortedUrl"));
+            shortedUrl.push(newUrl);
+            localStorage.setItem("shortedUrl", JSON.stringify(shortedUrl));
+
+            urlInput.value = "";
+
+            window.location.reload();
+          })
+          .catch((error) => {
+            const getError = document.getElementById("validate");
+            getError.innerHTML = `<p class="text-danger">
+            Url must be a valid url with http or https protocol
+          </p>
+          `;
+          });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
