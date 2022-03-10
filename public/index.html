@@ -299,7 +299,7 @@
           url: url,
         };
 
-        await fetch("https://wshort.vercel.app/api/shorturl", {
+        await fetch(`${window.location.origin}/api/shorturl`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
